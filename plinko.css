@@ -1,0 +1,408 @@
+/* Styles for Plinko game - Casino Theme */
+:root {
+    --bg-dark: #1a2a3a;
+    --bg-medium: #2c3e50;
+    --primary-teal: #00bfa5;
+    --text-light: #ecf0f1;
+    --text-dark: #bdc3c7;
+    --accent-green: #2ecc71;
+    --accent-red: #e74c3c;
+    --accent-orange: #f39c12;
+    --peg-color: #ffffff;
+    --ball-color: #ff38a2;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #101820 100%);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#game-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.game-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-teal);
+    letter-spacing: 2px;
+}
+
+#balance-display {
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-grow: 1;
+    min-height: 0;
+}
+
+#left-panel {
+    flex-basis: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#right-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 0;
+}
+
+.controls-container {
+    background-color: var(--bg-medium);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    height: 100%;
+}
+
+.bet-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2em;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.bet-info:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#bet-amount-display {
+    color: var(--text-light);
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+#message-display {
+    min-height: 48px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    transition: color 0.3s;
+}
+
+.risk-buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.bet-risk-button {
+    padding: 15px 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.3s;
+}
+
+.bet-risk-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.bet-risk-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#bet-button-low {
+    background-color: var(--accent-green);
+}
+
+#bet-button-medium {
+    background-color: var(--accent-orange);
+}
+
+#bet-button-high {
+    background-color: var(--accent-red);
+}
+
+#logo-container {
+    color: var(--text-dark);
+    font-size: 2em;
+    font-weight: bold;
+    opacity: 0.5;
+}
+
+/* --- REFINED GAME BOARD STYLING --- */
+#plinko-board {
+    width: 750px;
+    /* <<< INCREASED WIDTH */
+    background-color: var(--bg-medium);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#peg-area {
+    position: relative;
+    height: 580px;
+    /* <<< INCREASED HEIGHT */
+    border: 2px dashed var(--text-dark);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.peg {
+    background-color: var(--peg-color) !important;
+    box-shadow: 0 0 7px rgba(255, 255, 255, 0.5);
+}
+
+#ball {
+    width: 18px;
+    height: 18px;
+    background-color: var(--ball-color);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 15px var(--ball-color);
+}
+
+#prize-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.prize-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.prize-row.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.prize-slot {
+    flex: 1;
+    max-width: 45px;
+    /* Adjusted for wider board */
+    height: 35px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.prize-slot.low-risk {
+    background-color: #27ae60;
+}
+
+.prize-slot.medium-risk {
+    background-color: #f39c12;
+}
+
+.prize-slot.high-risk {
+    background-color: #e74c3c;
+}
+
+/* --- MODAL STYLES (UNCHANGED) --- */
+.hidden {
+    display: none !important;
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+#bet-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-medium);
+    color: var(--text-light);
+    padding: 30px;
+    border-radius: 12px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-teal);
+    text-align: center;
+}
+
+#bet-modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--primary-teal);
+}
+
+#predefined-bets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.bet-option {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--text-dark);
+    color: var(--text-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.bet-option:hover {
+    background-color: var(--primary-teal);
+    border-color: var(--primary-teal);
+    color: var(--bg-dark);
+    font-weight: 600;
+}
+
+.custom-bet-container {
+    margin-bottom: 25px;
+}
+
+#custom-bet-input {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--text-dark);
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 150px;
+    font-size: 1em;
+}
+
+#custom-bet-input:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+}
+
+#confirm-bet-button {
+    background-color: var(--accent-green);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    width: 60%;
+    transition: background-color 0.2s;
+}
+
+#confirm-bet-button:hover {
+    background-color: #27ae60;
+}
+
+#close-modal-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 2em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+/* Centrerende header */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0f1e2e;
+    border-radius: 10px;
+}
+
+/* Zorg dat PLINKO + logo op één lijn staan */
+.game-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* ruimte tussen tekst en logo */
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    color: #00ffc8;
+    /* of je gekozen kleur */
+}
+
+/* Optioneel: logo iets beter positioneren */
+.game-header h1 img {
+    width: 50px;
+    /* pas aan naar gewenste grootte */
+    height: auto;
+    vertical-align: middle;
+}
