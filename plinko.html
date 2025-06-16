@@ -17,11 +17,14 @@
     <div id="bet-modal" class="hidden">
         <h2>Select Bet Amount</h2>
         <div id="predefined-bets">
-            <button class="bet-option" data-amount="1">1</button><button class="bet-option"
-                data-amount="2">2</button><button class="bet-option" data-amount="5">5</button><button
-                class="bet-option" data-amount="10">10</button><button class="bet-option"
-                data-amount="20">20</button><button class="bet-option" data-amount="50">50</button><button
-                class="bet-option" data-amount="100">100</button>
+            <!-- Je kunt hier meer bedragen toevoegen als je wilt -->
+            <button class="bet-option" data-amount="1">1</button>
+            <button class="bet-option" data-amount="5">5</button>
+            <button class="bet-option" data-amount="10">10</button>
+            <button class="bet-option" data-amount="50">50</button>
+            <button class="bet-option" data-amount="100">100</button>
+            <button class="bet-option" data-amount="300">300</button>
+            <button class="bet-option" data-amount="500">500</button>
         </div>
         <div class="custom-bet-container"><label for="custom-bet-input">Custom Amount:</label><input type="number"
                 id="custom-bet-input" placeholder="e.g., 25"></div>
@@ -31,14 +34,13 @@
     <!-- Main Game Wrapper -->
     <div id="game-wrapper">
         <header class="game-header">
+            <!-- AANGEPAST: Logo alleen in de H1, niet dubbel -->
             <h1>
                 PLINKO
-                <img src="image/logoMap.png" alt="Your Logo" width="90" height="90">
+                <img src="image/logoMap.png" alt="AH Logo">
             </h1>
-            <img src="image/logoMap.png" alt="Your Logo" width="80" height="80">
-            <div id="balance-display">Balance: 300</div>
+            <div id="balance-display">Balans: € 3.900,00</div>
         </header>
-
 
         <div id="main-content">
             <!-- Left Panel for Controls -->
@@ -46,30 +48,29 @@
                 <div class="controls-container">
                     <div class="bet-info" id="bet-selector">
                         <span>Bet Amount</span>
-                        <span id="bet-amount-display">10</span>
+                        <!-- AANGEPAST: Startwaarde van screenshot -->
+                        <span id="bet-amount-display">€ 300,00</span>
                     </div>
                     <div class="risk-buttons-container">
                         <button id="bet-button-low" class="bet-risk-button" data-risk="low">Low Risk</button>
                         <button id="bet-button-medium" class="bet-risk-button" data-risk="medium">Medium Risk</button>
                         <button id="bet-button-high" class="bet-risk-button" data-risk="high">High Risk</button>
                     </div>
-                    <div id="message-display">Choose your risk and bet!</div>
+                    <!-- AANGEPAST: Starttekst van screenshot -->
+                    <div id="message-display">No prize this time. Better luck next time!</div>
                 </div>
             </div>
 
             <!-- Right Panel for the Game -->
             <div id="right-panel">
-                <div id="logo-container">
-                    <source src="image/logoMap.png" alt="Your Logo">
-                </div>
+                <!-- De game container is nu simpeler, geen logo hier -->
                 <div id="game-container">
-                    <!-- The board is now the main component with prizes inside -->
                     <div id="plinko-board">
-                        <!-- This is the new area for pegs and ball physics -->
                         <div id="peg-area">
-                            <div id="ball"></div>
+                            <!-- AANGEPAST: Dit is nu een sjabloon voor nieuwe ballen -->
+                            <!-- NIEUWE REGEL -->
+                            <div id="ball-template" class="ball"></div>
                         </div>
-                        <!-- Prize rows are now INSIDE the board -->
                         <div id="prize-rows-container">
                             <div id="prize-row-low" class="prize-row"></div>
                             <div id="prize-row-medium" class="prize-row"></div>

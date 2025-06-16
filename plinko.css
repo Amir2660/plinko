@@ -406,3 +406,22 @@ body {
     height: auto;
     vertical-align: middle;
 }
+
+/* Voeg dit toe aan je plinko.css */
+
+#ball,
+/* NIEUWE, CORRECTE CSS */
+.ball {
+    /* We gebruiken nu de class selector '.' */
+    width: 18px;
+    height: 18px;
+    background-color: var(--ball-color);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 15px var(--ball-color);
+}
+
+/* We verbergen de sjabloon nog steeds via zijn unieke ID */
+#ball-template {
+    display: none;
+}
