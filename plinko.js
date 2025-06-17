@@ -19,7 +19,7 @@ let betModal, modalOverlay, predefinedBetsContainer, customBetInput, confirmBetB
 let riskButtons;
 
 // --- Game State ---
-let playerBalance = 3900; // Start balance van de screenshot
+let playerBalance = 300; // Start balance van de screenshot
 let betAmount = 300;     // Bet amount van de screenshot
 let pegs = [];
 

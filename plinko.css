@@ -413,8 +413,8 @@ body {
 /* NIEUWE, CORRECTE CSS */
 .ball {
     /* We gebruiken nu de class selector '.' */
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background-color: var(--ball-color);
     border-radius: 50%;
     position: absolute;
